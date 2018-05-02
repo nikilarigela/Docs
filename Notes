@@ -1,0 +1,133 @@
+setInterval - invokes every time with in the time which we are given
+eg : setInterval(tick,1000);
+here 1000 is milliseconds
+every 1 sec the tick will be called
+---------------------------------------------
+LifeCycle  of the components
+-> divided into four phases
+1. Initial phase
+ -> getDefaultProps()
+ -> getInitialState()
+ -> componenentWillMount()
+ -> render()
+ -> componenentdidMount()
+
+ 2. Updating phase
+ -> shouldComponentUpdate()
+ -> render()
+ -> componenentWillupdate()
+ -> componenentDidMount()
+
+3. Props Change phase
+ -> componentsWillReceiveProps()
+ -> shouldComponentUpdate()
+ -> render()
+ -> componenentWillupdate()
+ -> componenentDidMount()
+
+ 4. Unmounting phase
+  ->componenentWillunmount()
+
+
+  ----------------------------------------------------
+Events
+-events are nothing but clicks moves
+-event uses root handler to perform
+
+
+-----------------------------------------------------
+getInitialState - sets the state intitial state.
+setState - sets the state with new value.
+
+refs - stands for references
+eg : ref = {(input) => this.name = input}
+    to retrive  the value we use
+     this.name.value -.value  is must.
+-------------------------------------------------------
+keys - elements which helps react to identify componets uniquely
+router - router is a powerful routing library bulit on tops of react Framework.
+        - helps in adding new screens and flow to the applications very quickly.
+        - it keeps url in sync with data that's being displayed on the web page.
+---------------------------------------------------------------------------------
+css to make card
+.card{
+margin : 10px;
+border : 1px solid #eee;
+box-shadow : 0 2px 2px #ccc;
+padding : 20px
+}
+
+--------------------------------------------------------------------------------------
+want to create a new component we can use like
+
+import React from 'react';
+
+const person = (props) => {
+return ();
+}
+export default person;
+------------------------------------------------------------------------------------
+props.children -
+
+eg : <Person>hi</Person>
+here hi is the children  of the person tag
+
+-----------------------------------------------------------
+this.setState() -
+
+to change the state the value
+
+eg:state : {
+            person : {
+                        name : "abc",
+                        age : 25
+                      }
+            }
+
+suppose we want to change the state of the person's age to 23
+we can use setState method
+
+eg:
+this.setState( this.state.person.age : 23 )
+-------------------------------------------------------------------------------------------
+.bind (); --
+
+suppose if u want to pass the argument to the function we can use the bind function
+eg:
+   add = (withNumber) =>{
+      this.i : i + withNumber
+   }
+
+   we can pass like
+   this.add.bind(this,withNumber)
+   here this refers to this class and withNumber is value we want to phases
+
+   -------------------------------------------------------------------------------------------
+   suppose we want to pass the methods to the child class from the parent class
+   we can pass it as props .
+   eg:
+   add = (withNumber) =>{
+      this.i : i + withNumber
+   }
+      Person< click = "this.add"/>
+
+      and we can access it like
+
+      <p onClick = {props.click} />
+---------------------------------------------------------------------------------------------------------
+onChanged = ""
+
+to know the value is changed in the we can use html attribute onChanged
+eg :
+<input type = "text" onChanged= "changeHandler" />
+
+we can add just simply using event object
+
+changeHandler = (event) => {
+name : event.target.value
+}
+here event is a object .
+target is the element where we are  retriveing.
+value is our value.
+
+----------------------------------------------------------------------------------------------------------------------
